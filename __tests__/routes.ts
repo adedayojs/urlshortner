@@ -76,4 +76,25 @@ describe('Correct Request', () => {
       .query({ shortId: reply.shortId });
     expect(req.status).toBe(302);
   });
+
+  test('Returns redirect when existent url is requested but in uppercase', async () => {
+    const req = await request(app)
+      .get('/api/v1/urlshortner')
+      .query({ shortId: reply.shortId.toUpperCase() });
+    expect(req.status).toBe(302);
+  });
+
+  test('Returns redirect when existent url is requested but query param is in uppercase', async () => {
+    const req = await request(app)
+      .get('/api/v1/urlshortner')
+      .query({ SHORTID: reply.shortId });
+    expect(req.status).toBe(302);
+  });
+
+  test('Returns redirect when existent url is requested but query param and url is in uppercase', async () => {
+    const req = await request(app)
+      .get('/api/v1/urlshortner')
+      .query({ SHORTID: reply.shortId.toUpperCase() });
+    expect(req.status).toBe(302);
+  });
 });
