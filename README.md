@@ -21,15 +21,15 @@ yarn start
 
 Make a POST request to the endpoint
 
-```js
-api / urlshortner;
+```
+    <base-url>/api/v1/urlshortner;
 ```
 
 with a json request body of this format
 
 ```JSON
   {
-    url: URL
+    "url": "URL"
   }
   Note: That the url must be a valid url else your request wont be processed
 ```
@@ -39,7 +39,7 @@ with a json request body of this format
 Make a get request with query parameter to the endpoint
 
 ```url
-  api/urlshortner?shortId=<shortId>
+  <base-url>/api/v1/urlshortner?shortId=<shortId>
 ```
 
 The user will be redirected to the associated website if the url has been previously shortned using this service.
