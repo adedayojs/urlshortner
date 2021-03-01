@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLSchema } from 'graphql';
 
-import sampleController from './controllers/sample';
+import sampleController from './controllers/urlShortnerController';
 import SampleType from './types/sample';
 
 const query = new GraphQLObjectType({
