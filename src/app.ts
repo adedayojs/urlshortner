@@ -7,6 +7,9 @@ import { graphqlHTTP } from 'express-graphql';
 import path from 'path';
 import fs from 'fs';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import apiRouter from './routes/index';
 import schema from './schema';
