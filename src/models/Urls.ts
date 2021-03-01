@@ -1,4 +1,4 @@
-import shortid from 'shortid';
+import { nanoid } from 'nanoid';
 import mongoose, { Document, Schema } from 'mongoose';
 
 export interface IUrl extends Document {
@@ -7,7 +7,7 @@ export interface IUrl extends Document {
 }
 const UrlSchema = new Schema({
   url: { type: String, required: true },
-  shortId: { type: String, required: true, default: shortid.generate() },
+  shortId: { type: String, required: true, default: nanoid(10) },
 });
 
 export default mongoose.model<IUrl>('url', UrlSchema);
