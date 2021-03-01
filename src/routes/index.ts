@@ -1,12 +1,9 @@
 import { Router } from 'express';
-import UrlShornterRouteHandler from './urlShortner';
+import VersionOneHandler from './v1';
+import VersionTwoHandler from './v2';
 
 const router = Router();
 
-router.get('/', function (_req, res, _next) {
-  const message = { message: 'all is well' };
-  return res.status(200).json(message);
-});
-
-router.use('/urlshortner', UrlShornterRouteHandler);
+router.use('/v1', VersionOneHandler);
+router.use('/v2', VersionTwoHandler);
 export default router;
