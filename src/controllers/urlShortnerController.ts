@@ -4,15 +4,15 @@ import validator from 'validator';
 import Url from '../models/Urls';
 
 const Redirect = async (req: express.Request, res: express.Response) => {
-  const { shortId } = req.query;
-
+  const { shortid } = req.query;
+  console.log(req.query);
   // Return error if short id isn't supplied
-  if (!shortId || typeof shortId !== 'string') {
+  if (!shortid || typeof shortid !== 'string') {
     return res.status(400).json({ msg: 'id not provided' });
   }
 
   try {
-    const URL = await Url.findOne({ shortId });
+    const URL = await Url.findOne({ shortId: shortid });
     // Return error if url isn't registered otherwise redirect user to associated page
     if (!URL) {
       return res.status(404).json({ msg: 'invalid url id' });

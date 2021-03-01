@@ -13,6 +13,7 @@ dotenv.config();
 
 import apiRouter from './routes/index';
 import schema from './schema';
+import queryParamsToLowerCase from './middlewares/queryparamtolowercase';
 
 const app = express();
 
@@ -61,7 +62,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api', apiRouter);
+app.use('/api', [queryParamsToLowerCase], apiRouter);
 
 app.use(
   '/graphql',
