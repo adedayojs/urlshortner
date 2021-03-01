@@ -6,11 +6,22 @@ import morgan from 'morgan';
 import { graphqlHTTP } from 'express-graphql';
 import path from 'path';
 import fs from 'fs';
+import mongoose from 'mongoose';
 
 import apiRouter from './routes/index';
 import schema from './schema';
 
 const app = express();
+
+const MONGO_URI = `${process.env.MONGO_URI}`;
+// Database
+mongoose
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('connected to mongo database'))
+  .catch((e) => console.error(e));
 
 // Setup Request logging
 const logFormat = process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
