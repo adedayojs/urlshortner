@@ -5,7 +5,6 @@ import Url from '../models/Urls';
 
 const Redirect = async (req: express.Request, res: express.Response) => {
   const { shortid } = req.query;
-  console.log(req.query);
   // Return error if short id isn't supplied
   if (!shortid || typeof shortid !== 'string') {
     return res.status(400).json({ msg: 'id not provided' });
