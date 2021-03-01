@@ -1,4 +1,4 @@
-# Express React Template with Typescript
+# Url Shortner
 
 [![CircleCI](https://circleci.com/gh/bondz/node-express-react-ts.svg?style=svg)](#)
 
@@ -81,3 +81,5 @@ Note:
 The server part of this system is already designed and exposes a set of REST endpoints via the `/api` route and a GraphQL endpoint.
 
 The client has also been setup to consume graphql if you chose to use that instead.
+
+- Contributors are also welcomed to edit this service
