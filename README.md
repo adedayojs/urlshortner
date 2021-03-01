@@ -1,6 +1,6 @@
 # Express React Template with Typescript
 
-[![CircleCI](https://circleci.com/gh/bondz/node-express-react-ts.svg?style=svg)](https://circleci.com/gh/bondz/node-express-react-ts)
+[![CircleCI](https://circleci.com/gh/bondz/node-express-react-ts.svg?style=svg)](#)
 
 ## Installation
 
